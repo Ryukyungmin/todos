@@ -14,7 +14,7 @@ public class SignIn {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id; // 데이터 베이스의 키 값, 겹치지 않는 유일한 id 값
-        @Column
+        @Column(unique = true) // 데이터베이스 항목입니다. unique는 데이터베이스 내에서 겹치는 정보가 없도록 한다
         private String email;
         @Column
         private String nickName;
