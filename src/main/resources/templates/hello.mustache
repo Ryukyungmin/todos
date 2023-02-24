@@ -8,8 +8,40 @@
     <title>Document</title>
 </head>
 <body>
-<h2>{{username}} 님, 반갑습니다</h2>
-<a href="/">로그 아웃</a>
+<div>
+    <h2>{{username}} 님, 반갑습니다</h2>
+    <a href="/">로그 아웃</a>
+</div>
+
+<div>
+    <form action="/addtodo" method="post">
+        <input type="text" name="todo" required>
+        <input type="hidden" name="userid" value="{{userid}}" class="form=control">
+        <button type="submit">저장</button>
+
+    </form>
+</div>
+<div>
+    <ul>{{#todos}}</ul>
+        <li>
+            {{#done}}
+                <del>{{todo}}</del>
+                <input type="button" onclick="OnDoneButtonClick({{id}}, {{userid}}, 0)" class="chk-button">
+            {{/done}}
+
+
+            {{^done}}
+                {{todo}}
+                <input type="button" onclick="OnDoneButtonClick({{id}}, {{userid}}, 1)">
+            {{/done}}
+
+        </li>
+
+    <ul>{{/todos}}</ul>
+
+</div>
+
+<script src = "/js/javong_utils.js" ></script>
 
 </body>
 </html>

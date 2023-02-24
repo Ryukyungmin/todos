@@ -15,8 +15,11 @@ import java.util.List;
 
 @Controller
 public class SigninController {
+
     @Autowired
-    SignInRepository signInRepository;
+    private TodoController todoController;
+    @Autowired
+    SignInRepository signInRepository; // Database로부터 내용을 갖고 오거나(쿼리), 입력(INSERT), 수정, 식별하는 역할을 한다
 
     @PostMapping("/signin")
     public String TrySignIn(@NotNull SignInForm signInForm, @NotNull Model model){
@@ -45,7 +48,7 @@ public class SigninController {
                 //로그인 처리
                 if (sign.getPassword().equals(signInForm.getPassword())){
                     model.addAttribute("username",sign.getNickName() ) ;
-                    return "/hello";
+                    return todoController.ToHello(sign.getId(), model);
                 }
 
             }
@@ -97,8 +100,8 @@ public class SigninController {
 
         System.out.println(savedsignin);
         model.addAttribute("username",savedsignin.getNickName() ) ;
-
-        // 저장된 데이터의 닉네임을 가져온다
+        model.addAttribute("userid", savedsignin.getId());
+        // 저장된 데이터의 닉네임, id을 가져온다
 
 
         return "/hello";

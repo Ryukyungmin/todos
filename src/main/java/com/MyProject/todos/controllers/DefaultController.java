@@ -12,5 +12,7 @@ public class DefaultController {
         return "hello";
     }
 
+    @GetMapping("/signup")
+    public String SignUp(Model model) {return "/signup";}
 
 }
