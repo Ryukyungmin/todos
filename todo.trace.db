@@ -1,0 +1,12 @@
+2023-02-24 13:14:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SIGN_IN" not found (this database is empty); SQL statement:
+select s1_0.id,s1_0.email,s1_0.nick_name,s1_0.password from sign_in s1_0 where s1_0.email=? [42104-214]
+2023-02-24 13:14:12 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SIGN_IN" not found (this database is empty); SQL statement:
+select s1_0.id,s1_0.email,s1_0.nick_name,s1_0.password from sign_in s1_0 where s1_0.email=? [42104-214]
+2023-02-24 13:14:16 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SIGN_IN" not found (this database is empty); SQL statement:
+select s1_0.id,s1_0.email,s1_0.nick_name,s1_0.password from sign_in s1_0 where s1_0.email=? [42104-214]
+2023-02-24 13:14:27 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SIGN_IN" not found (this database is empty); SQL statement:
+insert into sign_in (id, email, nick_name, password) values (default, ?, ?, ?) [42104-214]
